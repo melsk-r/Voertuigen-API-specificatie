@@ -52,11 +52,19 @@ title: [Naam API-specificatie 1]
 
 [Naar boven](./index)
 
-[Links naar Redoc van diverse versies van de OAS.]
+Versie   | Release datum | API specificatie
+-------- | ------------- | ----------------
+1.0.0    | 26-09-2023    | [ReDoc][zaken-1.0.0-redoc]
+
+[zaken-1.0.0-redoc]: redoc-1.0.0
 
 ## Swagger
 
 [Naar boven](./index)
 
-[Links naar Swagger van diverse versies van de OAS.]
+Versie   | Release datum | API specificatie
+-------- | ------------- | ----------------
+1.0.0    | 26-09-2023    | [Swagger][zaken-1.0.0-swagger]
+
+[zaken-1.0.0-swagger]: swagger-ui-1.0.0
 
