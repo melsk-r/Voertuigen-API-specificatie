@@ -1,0 +1,47 @@
+name: lint-oas
+
+on:
+  push:
+    paths:
+      - specificatie/*.yaml
+      - .github/workflows/lint-oas.yml
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: npm ci
+      - name: lint OAS
+        run: npm run oas:lint
+      - name: resolve OAS
+        run: npm run oas:resolve
+      - name: lint resolved OAS
+        run: npm run oas:lint-genereervariant
+      - name: push resolved to remote
+        run: |
+          doCommit=false
+          
+          if [ -n "$(git status specificatie/genereervariant/openapi.yaml --porcelain)" ]; then
+              echo "specificatie/genereervariant/openapi.yaml modified"
+              git add specificatie/genereervariant/openapi.*
+              doCommit=true
+          fi
+          if [ $doCommit = true ]; then
+              echo "commit resolve artifacts"
+              git config user.name "$GITHUB_ACTOR"
+              git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+              git pull --ff-only
+              git commit -m "commit resolve artifacts"
+              git push
+          else
+              echo "no commit"
+          fi
