@@ -44,7 +44,7 @@ paths:
         schema:
           type: "integer"
       responses:
-        200:
+        '200':
           description: "Zoekactie geslaagd"
           headers:
             api-version:
@@ -61,29 +61,29 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Eigenaar"
-        400:
+        '400':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/400"
-        401:
+        '401':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/401"
-        403:
+        '403':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/403"
-        404:
+        '404':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/404"
-        409:
+        '409':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/409"
-        410:
+        '410':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/410"
-        415:
+        '415:
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/415"
-        429:
+        '429':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/429"
-        500:
+        '500':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/500"
-        501:
+        '501':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/501"
-        503:
+        '503':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/503"
-        default:
+        'default':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
       tags:
       - "Eigenaren"
@@ -107,7 +107,7 @@ paths:
           type: "string"
           maxLength: 15
       responses:
-        200:
+        '200':
           description: "Zoekactie geslaagd"
           headers:
             api-version:
@@ -124,29 +124,29 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Fiets"
-        400:
+        '400':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/400"
-        401:
+        '401':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/401"
-        403:
+        '403':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/403"
-        404:
+        '404':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/404"
-        409:
+        '409':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/409"
-        410:
+        '410':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/410"
-        415:
+        '415':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/415"
-        429:
+        '429':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/429"
-        500:
+        '500':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/500"
-        501:
+        '501':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/501"
-        503:
+        '503':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/503"
-        default:
+        'default':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
       tags:
       - "Voertuigen"
@@ -183,7 +183,7 @@ paths:
           type: "string"
           maxLength: 10
       responses:
-        200:
+        '200':
           description: "Zoekactie geslaagd"
           headers:
             api-version:
@@ -200,29 +200,29 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Motorvoertuig"
-        400:
+        '400':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/400"
-        401:
+        '401':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/401"
-        403:
+        '403':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/403"
-        404:
+        '404':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/404"
-        409:
+        '409':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/409"
-        410:
+        '410':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/410"
-        415:
+        '415':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/415"
-        429:
+        '429':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/429"
-        500:
+        '500':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/500"
-        501:
+        '501':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/501"
-        503:
+        '503':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/503"
-        default:
+        'default':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
       tags:
       - "Voertuigen"
@@ -232,7 +232,7 @@ paths:
       parameters:
       - $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/parameters/fields"
       responses:
-        200:
+        '200':
           description: "Zoekactie geslaagd"
           headers:
             api-version:
@@ -251,27 +251,27 @@ paths:
                 type: "array"
                 items:
                   $ref: "#/components/schemas/Voertuig-getVariant"
-        400:
+        '400':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/400"
-        401:
+        '401':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/401"
-        403:
+        '403':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/403"
-        409:
+        '409':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/409"
-        410:
+        '410':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/410"
-        415:
+        '415':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/415"
-        429:
+        '429':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/429"
-        500:
+        '500':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/500"
-        501:
+        '501':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/501"
-        503:
+        '503':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/503"
-        default:
+        'default':
           $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
       tags:
       - "Voertuigen"
