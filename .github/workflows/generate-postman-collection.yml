@@ -1,4 +1,4 @@
-genname: generate-postman-collection
+name: generate-postman-collection
 
 on:
   push:
