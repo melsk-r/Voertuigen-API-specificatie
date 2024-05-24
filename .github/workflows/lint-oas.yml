@@ -29,6 +29,8 @@ jobs:
       - name: push resolved to remote
         run: |
           doCommit=false
+
+          echo "The GitHub Actor's username is: $GITHUB_ACTOR"
           
           if [ -n "$(git status specificatie/genereervariant/openapi.yaml --porcelain)" ]; then
               echo "specificatie/genereervariant/openapi.yaml modified"
