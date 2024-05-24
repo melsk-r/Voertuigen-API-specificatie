@@ -1,0 +1,661 @@
+openapi: "3.0.0"
+servers:
+- description: "SwaggerHub API Auto Mocking"
+  url: "https://virtserver.swaggerhub.com/VNGRealisatie/api/voertuigen_api/v1"
+- description: "Referentie-implementatie"
+  url: "https://www.voorbeeldgemeente.nl/api/voertuigen_api/v1"
+info:
+  title: "Voertuigen API"
+  version: "1.0"
+  x-imvertor-generator-version: "4.0.0"
+  x-yamlCompiler-stylesheets-version: "20231117"
+  contact:
+    url: ""
+    email: "standaarden.ondersteuning@vng.nl"
+  license:
+    name: "European Union Public License, version 1.2 (EUPL-1.2)"
+    url: "https://eupl.eu/1.2/nl/"
+paths:
+  /eigenaren/{burgerservicenummer}:
+    get:
+      operationId: "Geteigenaren"
+      parameters:
+      - in: "path"
+        name: "burgerservicenummer"
+        description: "Het burgerservicenummer, bedoeld in artikel 1.1 van de Wet algemene\
+          \ bepalingen burgerservicenummer.\n\nElk ingeschreven natuurlijk persoon\
+          \ heeft een BSN, een nummer dat de natuurlijk persoon uniek identificeert\
+          \ in overheidsadministraties. De attribuutsoort kent onder meer historie\
+          \ omdat het mogelijk is dat het Burgerservicenummer van een natuurlijk persoon\
+          \ wijzigt, met name vanwege ambtelijke correcties. Zie verder de toelichting\
+          \ in de BRP.\n\nElk ingeschreven natuurlijk persoon heeft een BSN, een nummer\
+          \ dat de natuurlijk persoon uniek identificeert in overheidsadministraties.\
+          \ De attribuutsoort kent onder meer historie omdat het mogelijk is dat het\
+          \ Burgerservicenummer van een natuurlijk persoon wijzigt, met name vanwege\
+          \ ambtelijke correcties. Zie verder de toelichting in de BRP. \n\nElk ingeschreven\
+          \ natuurlijk persoon heeft een BSN, een nummer dat de natuurlijk persoon\
+          \ uniek identificeert in overheidsadministraties. De attribuutsoort kent\
+          \ onder meer historie omdat het mogelijk is dat het Burgerservicenummer\
+          \ van een natuurlijk persoon wijzigt, met name vanwege ambtelijke correcties.\
+          \ Zie verder de toelichting in de BRP. \n\nAlle nummers waarvoor geldt dat,\
+          \ indien aangeduid als (s0 s1 s2 s3 s4 s5 s6 s7 s8), het resultaat van (9*s0)\
+          \ + (8*s1) + (7*s2) +...+ (2*s7) - (1*s8) deelbaar is door elf."
+        required: true
+        schema:
+          type: "integer"
+      responses:
+        200:
+          description: "Zoekactie geslaagd"
+          headers:
+            api-version:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/api_version"
+            warning:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/warning"
+            X-Rate-Limit-Limit:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Limit"
+            X-Rate-Limit-Remaining:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Remaining"
+            X-Rate-Limit-Reset:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Reset"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Eigenaar"
+        400:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/400"
+        401:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/401"
+        403:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/403"
+        404:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/404"
+        409:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/409"
+        410:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/410"
+        415:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/415"
+        429:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/429"
+        500:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/500"
+        501:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/501"
+        503:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/503"
+        default:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
+      tags:
+      - "Eigenaren"
+  /fietsen/{identificatie}:
+    get:
+      operationId: "Getfiets"
+      parameters:
+      - $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/parameters/fields"
+      - in: "query"
+        name: "framenummer"
+        description: "Id"
+        required: true
+        schema:
+          type: "integer"
+      - in: "path"
+        name: "identificatie"
+        description: "Alfanummerieke string waarmee het voertuig binnen de gemeente\
+          \ geidentificeerd kan worden."
+        required: true
+        schema:
+          type: "string"
+          maxLength: 15
+      responses:
+        200:
+          description: "Zoekactie geslaagd"
+          headers:
+            api-version:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/api_version"
+            warning:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/warning"
+            X-Rate-Limit-Limit:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Limit"
+            X-Rate-Limit-Remaining:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Remaining"
+            X-Rate-Limit-Reset:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Reset"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Fiets"
+        400:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/400"
+        401:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/401"
+        403:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/403"
+        404:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/404"
+        409:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/409"
+        410:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/410"
+        415:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/415"
+        429:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/429"
+        500:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/500"
+        501:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/501"
+        503:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/503"
+        default:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
+      tags:
+      - "Voertuigen"
+  /motorvoertuigen/{identificatie}:
+    get:
+      operationId: "Getmotorvoertuig"
+      parameters:
+      - $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/parameters/fields"
+      - in: "path"
+        name: "identificatie"
+        description: "Alfanummerieke string waarmee het voertuig binnen de gemeente\
+          \ geidentificeerd kan worden."
+        required: true
+        schema:
+          type: "string"
+          maxLength: 15
+      - in: "query"
+        name: "kenteken"
+        description: "Notes SIM: Een kenteken is een identificatiemiddel voor voertuigen,\
+          \ bestaande uit een op dat voertuig bevestigde kentekenplaat met een letter-\
+          \ en cijfercombinatie en een bijhorend (papieren) kentekenbewijs.\n\nTV\
+          \ Toelichting SIM: Het kenteken van een voertuig bestaat uit een combinatie\
+          \ van cijfers en letters. Deze combinatie is vermeld op het kentekenbewijs\
+          \ en de kentekenplaat. Door het kenteken wordt een voertuig uniek en identificeerbaar.\n\
+          \nTV Toelichting SIM: Het kenteken van een voertuig bestaat uit een combinatie\
+          \ van cijfers en letters. Deze combinatie is vermeld op het kentekenbewijs\
+          \ en de kentekenplaat. Door het kenteken wordt een voertuig uniek en identificeerbaar.\
+          \ \n\nTV Toelichting SIM: Het kenteken van een voertuig bestaat uit een\
+          \ combinatie van cijfers en letters. Deze combinatie is vermeld op het kentekenbewijs\
+          \ en de kentekenplaat. Door het kenteken wordt een voertuig uniek en identificeerbaar.\
+          \ \n\nTV Patroon SIM: een combinatie van cijfers en letters"
+        required: true
+        schema:
+          type: "string"
+          maxLength: 10
+      responses:
+        200:
+          description: "Zoekactie geslaagd"
+          headers:
+            api-version:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/api_version"
+            warning:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/warning"
+            X-Rate-Limit-Limit:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Limit"
+            X-Rate-Limit-Remaining:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Remaining"
+            X-Rate-Limit-Reset:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Reset"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Motorvoertuig"
+        400:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/400"
+        401:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/401"
+        403:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/403"
+        404:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/404"
+        409:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/409"
+        410:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/410"
+        415:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/415"
+        429:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/429"
+        500:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/500"
+        501:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/501"
+        503:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/503"
+        default:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
+      tags:
+      - "Voertuigen"
+  /voertuigen:
+    get:
+      operationId: "Getvoertuigen"
+      parameters:
+      - $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/parameters/fields"
+      responses:
+        200:
+          description: "Zoekactie geslaagd"
+          headers:
+            api-version:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/api_version"
+            warning:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/warning"
+            X-Rate-Limit-Limit:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Limit"
+            X-Rate-Limit-Remaining:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Remaining"
+            X-Rate-Limit-Reset:
+              $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/headers/X_Rate_Limit_Reset"
+          content:
+            application/json:
+              schema:
+                type: "array"
+                items:
+                  $ref: "#/components/schemas/Voertuig-getVariant"
+        400:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/400"
+        401:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/401"
+        403:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/403"
+        409:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/409"
+        410:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/410"
+        415:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/415"
+        429:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/429"
+        500:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/500"
+        501:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/501"
+        503:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/503"
+        default:
+          $ref: "https://raw.githubusercontent.com/VNG-Realisatie/API-Kennisbank/master/common/common.yaml#/components/responses/default"
+      tags:
+      - "Voertuigen"
+
+components:
+  schemas:
+    Eigenaar:
+      allOf:
+      - $ref: "#/components/schemas/NatuurlijkPersoon"
+      - type: "object"
+        description: "Een NATUURLIJK PERSOON ingeschreven in de Basisregistratie Personen\
+          \ (BRP).\n\nUGM toevoeging aan definitie. \n\nBSM toevoeging aan definitie.\
+          \ \n\nHet betreft de verzameling van personen ingeschreven in de BRP woonachtig\
+          \ in de gemeente dan wel elders en van belang voor de gemeentelijke taakuitoefening.\
+          \ Een INGESCHREVEN NATUURLIJK PERSOON is een specialisatie van NATUURLIJK\
+          \ PERSOON.\n\nHet betreft de verzameling van personen ingeschreven in de\
+          \ BRP woonachtig in de gemeente dan wel elders en van belang voor de gemeentelijke\
+          \ taakuitoefening. Een INGESCHREVEN NATUURLIJK PERSOON is een specialisatie\
+          \ van NATUURLIJK PERSOON. \n\nHet betreft de verzameling van personen ingeschreven\
+          \ in de BRP woonachtig in de gemeente dan wel elders en van belang voor\
+          \ de gemeentelijke taakuitoefening. Een INGESCHREVEN NATUURLIJK PERSOON\
+          \ is een specialisatie van NATUURLIJK PERSOON."
+        properties:
+          emailadres:
+            type: "string"
+            title: "Emailadres"
+            description: "Elektronisch postadres waaronder het subject in de regel\
+              \ bereikbaar is.\n\nIn tegenstelling tot het GFO BG is hier alleen sprake\
+              \ van één emailadres dat het subject beschouwd als zijn ‘primaire’ emailadres.\n\
+              \nIn tegenstelling tot het GFO BG is hier alleen sprake van één emailadres\
+              \ dat het subject beschouwd als zijn ‘primaire’ emailadres. \n\nIn tegenstelling\
+              \ tot het GFO BG is hier alleen sprake van één emailadres dat het subject\
+              \ beschouwd als zijn ‘primaire’ emailadres. \n\nalle bestaande alfanumerieke\
+              \ tekens waarin zich, aan het begin noch aan het eind, een ‘@’ moet\
+              \ bevinden."
+            maxLength: 254
+          rijbewijsnummer:
+            type: "string"
+            title: "Rijbewijsnummer"
+            description: "Kleur"
+          telefoonnummer:
+            type: "string"
+            title: "Telefoonnummer"
+            description: "Telefoonnummer waaronder het subject in de regel bereikbaar\
+              \ is.\n\nIn tegenstelling tot het GFO BG is hier alleen sprake van é\
+              én telefoonnummer dat het subject beschouwd als zijn ‘primaire’ telefoonnummer.\n\
+              \nIn tegenstelling tot het GFO BG is hier alleen sprake van één telefoonnummer\
+              \ dat het subject beschouwd als zijn ‘primaire’ telefoonnummer. \n\n\
+              In tegenstelling tot het GFO BG is hier alleen sprake van één telefoonnummer\
+              \ dat het subject beschouwd als zijn ‘primaire’ telefoonnummer. \n\n\
+              alle bestaande alfanumerieke tekens."
+            maxLength: 20
+    Fiets:
+      allOf:
+      - $ref: "#/components/schemas/Voertuig"
+      - type: "object"
+        description: "Een vervoermiddel met minimaal twee wielen dat met spierkracht\
+          \ via pedalen wordt aangedreven, al dan niet met elektrische trapondersteuning.\n\
+          \nUGM toevoeging aan definitie. \n\nBSM toevoeging aan definitie."
+        required:
+        - "framenummer"
+        - "kleur"
+        properties:
+          framenummer:
+            type: "integer"
+            title: "Framenummer"
+            description: "Id"
+          kleur:
+            type: "string"
+            title: "Kleur"
+            description: "Kleur"
+            maxLength: 20
+            minLength: 1
+    Motorvoertuig:
+      allOf:
+      - $ref: "#/components/schemas/Voertuig"
+      - type: "object"
+        description: "Een motorvoertuig is een voertuig aangedreven door een motor,\
+          \ zoals een auto, bus of vrachtwagen.\n\nUGM toevoeging aan definitie. \n\
+          \nBSM toevoeging aan definitie."
+        required:
+        - "cilinderinhoud"
+        - "co2Uitstoot"
+        - "kenteken"
+        - "merkType"
+        properties:
+          cilinderinhoud:
+            type: "integer"
+            title: "Cilinderinhoud"
+            description: "Notes SIM: De inhoud van de cilinders\n\nTV Toelichting\
+              \ SIM: Geen toelichting\n\nTV Toelichting SIM: Geen toelichting \n\n\
+              TV Toelichting SIM: Geen toelichting"
+          co2Uitstoot:
+            type: "number"
+            title: "Co2-uitstoot"
+            description: "Notes SIM: De hoeveelheid CO2 die uitgestoten wordt per\
+              \ ...\n\nTV Toelichting SIM: Geen toelichting\n\nTV Toelichting SIM:\
+              \ Geen toelichting \n\nTV Toelichting SIM: Geen toelichting"
+          kenteken:
+            type: "string"
+            title: "Kenteken"
+            description: "Notes SIM: Een kenteken is een identificatiemiddel voor\
+              \ voertuigen, bestaande uit een op dat voertuig bevestigde kentekenplaat\
+              \ met een letter- en cijfercombinatie en een bijhorend (papieren) kentekenbewijs.\n\
+              \nTV Toelichting SIM: Het kenteken van een voertuig bestaat uit een\
+              \ combinatie van cijfers en letters. Deze combinatie is vermeld op het\
+              \ kentekenbewijs en de kentekenplaat. Door het kenteken wordt een voertuig\
+              \ uniek en identificeerbaar.\n\nTV Toelichting SIM: Het kenteken van\
+              \ een voertuig bestaat uit een combinatie van cijfers en letters. Deze\
+              \ combinatie is vermeld op het kentekenbewijs en de kentekenplaat. Door\
+              \ het kenteken wordt een voertuig uniek en identificeerbaar. \n\nTV\
+              \ Toelichting SIM: Het kenteken van een voertuig bestaat uit een combinatie\
+              \ van cijfers en letters. Deze combinatie is vermeld op het kentekenbewijs\
+              \ en de kentekenplaat. Door het kenteken wordt een voertuig uniek en\
+              \ identificeerbaar. \n\nTV Patroon SIM: een combinatie van cijfers en\
+              \ letters"
+            maxLength: 10
+            minLength: 8
+          merkType:
+            type: "string"
+            title: "Merk/Type"
+            description: "Notes SIM: Beschrijving van het merk en type\n\nTV Toelichting\
+              \ SIM: Geen toelichting\n\nTV Toelichting SIM: Geen toelichting \n\n\
+              TV Toelichting SIM: Geen toelichting"
+            maxLength: 30
+            minLength: 1
+          parkeervergunningen:
+            title: "is afgegeven voor"
+            description: "Notes SIM: Het MOTORVOERTUIG waarvoor een PARKEERVERGUNNING\
+              \ is afgegeven\n\nDe aan het motorvoertuig toegekende parkeervergunning.\
+              \ \n\nDe aan het motorvoertuig toegekende parkeervergunning. \n\nTV\
+              \ Toelichting SIM: Geen toelichting"
+            type: "string"
+            format: "uri"
+            readOnly: true
+            example: "datapunt.voorbeeldgemeente.nl/api/v1/parkeervergunningen/123456789"
+    Voertuig-getVariant:
+      type: "object"
+      description: "BSM toevoeging aan definitie."
+      required:
+      - "aanschafprijs"
+      - "aantalWielen"
+      - "identificatie"
+      - "type"
+      properties:
+        aanschafprijs:
+          type: "number"
+          title: "Aanschafprijs"
+          description: "De prijs die betaald is om het object in bezit te krijgen.\n\
+            \nEen bedrag in Euro's met 2 cijfers achter de komma."
+        aantalWielen:
+          type: "string"
+          title: "aantal wielen"
+          description: "Aantal wielen waarover het voertuig beschikt."
+          maxLength: 1
+          minLength: 1
+        identificatie:
+          type: "string"
+          title: "identificatie"
+          description: "Alfanummerieke string waarmee het voertuig binnen de gemeente\
+            \ geidentificeerd kan worden."
+          maxLength: 15
+          minLength: 1
+        type:
+          $ref: "#/components/schemas/Vervoersmiddel"
+    Voorvoegsel:
+      type: "object"
+      description: "Tabel waarin de voorvoegsels en scheidingstekens staan, zoals\
+        \ gebruikt worden in de namen van een NATUURLIJKE PERSOON."
+      required:
+      - "scheidingsteken"
+      - "voorvoegsel"
+      - "voorvoegselnummer"
+      properties:
+        scheidingsteken:
+          type: "string"
+          title: "Scheidingsteken"
+          description: "Het scheidingsteken"
+          minLength: 1
+        voorvoegsel:
+          type: "string"
+          title: "Voorvoegsel"
+          description: "Het voorvoegsel"
+          minLength: 1
+        voorvoegselnummer:
+          type: "integer"
+          title: "Voorvoegselnummer"
+          description: "Het identificerende nummer van het voorvoegsel"
+    NatuurlijkPersoon:
+      type: "object"
+      description: "Een mens (individu) die in het recht als rechtssubject is erkend\
+        \ en daarmee drager is van wettelijke rechten en plichten.\n\nUGM toevoeging\
+        \ aan definitie. \n\nBSM toevoeging aan definitie."
+      required:
+      - "burgerservicenummer"
+      - "geslachtsnaamstam"
+      - "namenreeksIndicator"
+      properties:
+        adellijkeTitel:
+          $ref: "#/components/schemas/AdelijkeTitel"
+        adresBinnenland:
+          type: "string"
+          title: "Adres binnenland"
+          description: "De aanduiding van het adres waar het SUBJECT verblijft dan\
+            \ wel bereikbaar is.\n\nHet betreft een afleidbaar gegeven dat is opgenomen\
+            \ om subjecten te kunnen zoeken op hun binnenlandse adres. Per subject\
+            \ kan dit immers verschillen (verblijfsadres, vestigingslocatie, bezoekadres,\
+            \ correspondentieadres, etcetera). Het kan zowel om een locatie-adres\
+            \ als een postbus-adres gaan.\n\nHet betreft een afleidbaar gegeven dat\
+            \ is opgenomen om subjecten te kunnen zoeken op hun binnenlandse adres.\
+            \ Per subject kan dit immers verschillen (verblijfsadres, vestigingslocatie,\
+            \ bezoekadres, correspondentieadres, etcetera). Het kan zowel om een locatie-adres\
+            \ als een postbus-adres gaan. \n\nHet betreft een afleidbaar gegeven dat\
+            \ is opgenomen om subjecten te kunnen zoeken op hun binnenlandse adres.\
+            \ Per subject kan dit immers verschillen (verblijfsadres, vestigingslocatie,\
+            \ bezoekadres, correspondentieadres, etcetera). Het kan zowel om een locatie-adres\
+            \ als een postbus-adres gaan. \n\nalle alfanumerieke tekens"
+          maxLength: 257
+        burgerservicenummer:
+          type: "integer"
+          title: "Burgerservicenummer"
+          description: "Het burgerservicenummer, bedoeld in artikel 1.1 van de Wet\
+            \ algemene bepalingen burgerservicenummer.\n\nElk ingeschreven natuurlijk\
+            \ persoon heeft een BSN, een nummer dat de natuurlijk persoon uniek identificeert\
+            \ in overheidsadministraties. De attribuutsoort kent onder meer historie\
+            \ omdat het mogelijk is dat het Burgerservicenummer van een natuurlijk\
+            \ persoon wijzigt, met name vanwege ambtelijke correcties. Zie verder\
+            \ de toelichting in de BRP.\n\nElk ingeschreven natuurlijk persoon heeft\
+            \ een BSN, een nummer dat de natuurlijk persoon uniek identificeert in\
+            \ overheidsadministraties. De attribuutsoort kent onder meer historie\
+            \ omdat het mogelijk is dat het Burgerservicenummer van een natuurlijk\
+            \ persoon wijzigt, met name vanwege ambtelijke correcties. Zie verder\
+            \ de toelichting in de BRP. \n\nElk ingeschreven natuurlijk persoon heeft\
+            \ een BSN, een nummer dat de natuurlijk persoon uniek identificeert in\
+            \ overheidsadministraties. De attribuutsoort kent onder meer historie\
+            \ omdat het mogelijk is dat het Burgerservicenummer van een natuurlijk\
+            \ persoon wijzigt, met name vanwege ambtelijke correcties. Zie verder\
+            \ de toelichting in de BRP. \n\nAlle nummers waarvoor geldt dat, indien\
+            \ aangeduid als (s0 s1 s2 s3 s4 s5 s6 s7 s8), het resultaat van (9*s0)\
+            \ + (8*s1) + (7*s2) +...+ (2*s7) - (1*s8) deelbaar is door elf."
+        geslachtsaanduiding:
+          $ref: "#/components/schemas/Geslacht"
+        geslachtsnaamstam:
+          type: "string"
+          title: "Geslachtsnaamstam"
+          description: "Notes SIM: De stam van de geslachtsnaam.\n\nTV Toelichting\
+            \ SIM: Zie de BRP voor verdere toelichting\n\nTV Toelichting SIM: Zie\
+            \ de BRP voor verdere toelichting \n\nTV Toelichting SIM: Zie de BRP voor\
+            \ verdere toelichting"
+          maxLength: 200
+          minLength: 1
+        namenreeksIndicator:
+          type: "boolean"
+          title: "Namenreeks?"
+          description: "Notes SIM: Indicator die aangeeft dat er sprake is van een\
+            \ namenreeks.\n\nTV Toelichting SIM: Indien er sprake is van een namenreeks\
+            \ wordt dit opgenomen als geslachtsnaam en worden voornamen niet opgenomen.\
+            \ Een namenreeks bestaat uit één of meer namen. Zie de BRP voor verdere\
+            \ toelichting.\n\nTV Toelichting SIM: Indien er sprake is van een namenreeks\
+            \ wordt dit opgenomen als geslachtsnaam en worden voornamen niet opgenomen.\
+            \ Een namenreeks bestaat uit één of meer namen. Zie de BRP voor verdere\
+            \ toelichting. \n\nTV Toelichting SIM: Indien er sprake is van een namenreeks\
+            \ wordt dit opgenomen als geslachtsnaam en worden voornamen niet opgenomen.\
+            \ Een namenreeks bestaat uit één of meer namen. Zie de BRP voor verdere\
+            \ toelichting."
+        predicaat:
+          $ref: "#/components/schemas/Predicaat"
+        scheidingsteken:
+          allOf:
+          - $ref: "#/components/schemas/Voorvoegsel"
+          - title: "scheidingsteken"
+            description: "Notes SIM: Teken dat een eventueel voorvoegsel scheidt van\
+              \ de stam van de geslachtsnaam.\n\nTV Toelichting SIM: Zie de BRP voor\
+              \ verdere toelichting\n\nTV Toelichting SIM: Zie de BRP voor verdere\
+              \ toelichting \n\nTV Toelichting SIM: Zie de BRP voor verdere toelichting\
+              \ \n\nVoorvoegsel in combinatie met scheidingsteken moet voorkomen in\
+              \ stamgegeven voorvoegsel binnen de centrale voorzieningen, zie stamgegeven\
+              \ A.5.10 (BRP)."
+        voornamen:
+          type: "string"
+          title: "Voornamen"
+          description: "Notes SIM: De samenvoeging van alle exemplaren van voornaam\
+            \ van een persoon.\n\nTV Toelichting SIM: Zie de BRP voor verdere toelichting\n\
+            \nTV Toelichting SIM: Zie de BRP voor verdere toelichting \n\nTV Toelichting\
+            \ SIM: Zie de BRP voor verdere toelichting"
+          maxLength: 200
+        voorvoegsel:
+          allOf:
+          - $ref: "#/components/schemas/Voorvoegsel"
+          - title: "voorvoegsel"
+            description: "Notes SIM: Voorvoegsel behorende bij de stam van de geslachtsnaam.\n\
+              \nTV Toelichting SIM: Een voorvoegsel kan uit meerdere onderdelen bestaan;\
+              \ zo is `van der` één voorvoegsel. Zie de BRP voor verdere toelichting\n\
+              \nTV Toelichting SIM: Een voorvoegsel kan uit meerdere onderdelen bestaan;\
+              \ zo is `van der` één voorvoegsel. Zie de BRP voor verdere toelichting\
+              \ \n\nTV Toelichting SIM: Een voorvoegsel kan uit meerdere onderdelen\
+              \ bestaan; zo is `van der` één voorvoegsel. Zie de BRP voor verdere\
+              \ toelichting \n\nVoorvoegsel in combinatie met scheidingsteken moet\
+              \ voorkomen in stamgegeven voorvoegsel binnen de centrale voorzieningen,\
+              \ zie stamgegeven A.5.10 (BRP). De GBA kent een stamtabel voor voorvoegsels.\
+              \ Bij de BRP is ervoor gekozen om deze stamtabel uitsluitend over te\
+              \ nemen tbv de migratieperiode. Daarna zal deze stamtabel worden opgeheven."
+    Voertuig:
+      type: "object"
+      description: "Een voertuig is een vervoersmiddel.\n\nUGM toevoeging aan definitie.\
+        \ \n\nBSM toevoeging aan definitie."
+      required:
+      - "aanschafprijs"
+      - "aantalWielen"
+      - "identificatie"
+      properties:
+        aanschafprijs:
+          type: "number"
+          title: "Aanschafprijs"
+          description: "De prijs die betaald is om het object in bezit te krijgen.\n\
+            \nEen bedrag in Euro's met 2 cijfers achter de komma."
+        aantalWielen:
+          type: "string"
+          title: "aantal wielen"
+          description: "Aantal wielen waarover het voertuig beschikt."
+          maxLength: 1
+          minLength: 1
+        identificatie:
+          type: "string"
+          title: "identificatie"
+          description: "Alfanummerieke string waarmee het voertuig binnen de gemeente\
+            \ geidentificeerd kan worden."
+          maxLength: 15
+          minLength: 1
+        eigenaren:
+          type: "array"
+          title: "waarvan eigenaar is"
+          description: "De persoon die eigenaar of houder is van het VOERTUIG\n\n\
+            De persoon die eigenaar of houder is van het VOERTUIG. \n\nDe persoon\
+            \ die eigenaar of houder is van het VOERTUIG."
+          items:
+            type: "string"
+            format: "uri"
+          readOnly: true
+          uniqueItems: true
+          example: "datapunt.voorbeeldgemeente.nl/api/v1/eigenaren/123456789"
+    AdelijkeTitel:
+      type: "string"
+      description: "Zie logisch ontwerp BRP bij de stamtabellen\\n* `B` - baron \\\
+        n* `B` - barones \\n* `G` - graaf \\n* `G` - gravin \\n* `H` - hertog \\n*\
+        \ `H` - hertogin \\n* `M` - markies \\n* `M` - markiezin \\n* `P` - prins\
+        \ \\n* `P` - prinses \\n* `R` - ridder "
+      enum:
+      - "B"
+      - "B"
+      - "G"
+      - "G"
+      - "H"
+      - "H"
+      - "M"
+      - "M"
+      - "P"
+      - "P"
+      - "R"
+    Geslacht:
+      type: "string"
+      description: "Notes SIM: Een aanduiding van alle waarden die geslacht kan aannemen\\\
+        n* `M` - Man \\n* `V` - Vrouw \\n* `O` - Onbekend "
+      enum:
+      - "M"
+      - "V"
+      - "O"
+    Predicaat:
+      type: "string"
+      description: "Een erenaam of betiteling van een persoon zoals die voorkomen\
+        \ in de centrale voorzieningen. Zie logisch ontwerp BRP bij de stamtabellen\\\
+        n* `K` - Zijne Koninklijke Hoogheid \\n* `K` - Hare Koninklijke Hoogheid \\\
+        n* `H` - Zijne Hoogheid \\n* `H` - Hare Hoogheid \\n* `J` - jonkheer \\n*\
+        \ `J` - jonkvrouw "
+      enum:
+      - "K"
+      - "K"
+      - "H"
+      - "H"
+      - "J"
+      - "J"
+    Vervoersmiddel:
+      type: "string"
+      description: "\\n* `MVT` - Motorvoertuig \\n* `FTS` - Fiets "
+      enum:
+      - "MVT"
+      - "FTS"
