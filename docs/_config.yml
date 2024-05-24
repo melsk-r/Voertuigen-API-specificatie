@@ -1,5 +1,5 @@
-baseurl: "/xxxxxxx"
-apiname: "Xxxxx"
+baseurl: "/Voertuigen-API-specificatie"
+apiname: "Voertuigen-API"
 url: "http://localhost:4000"
 # nav is t.b.v. generatie side-navigation menu.
 # Een 'title' zonder path of url genereert slechts een kopje.
@@ -7,7 +7,7 @@ url: "http://localhost:4000"
 # Indien een 'url' voorradig dan wordt daarmee de 'href' gevuld en dient het path slechts om te bepalen welke link active is.
 # 'target: blank' zorgt er voor dat de link in een nieuw tabblad wordt geöpend.
 nav:
-  - title: [Domein]
+  - title: Voertuigen
     subnav:
       - title: Introductie
         path: /
@@ -62,10 +62,10 @@ plugins:
 
 remote_theme: VNG-Realisatie/jekyll-theme-vng-realisatie
 
-github: VNG-Realisatie/Xxxxxx
+github: VNG-Realisatie/Voertuigen-API-specificatie
 
 theme: jekyll-theme-time-machine
 
-project_name: /Open Raadsinformatie
+project_name: /Voertuigen-API
 
 standard_family: VNG Realisatie
