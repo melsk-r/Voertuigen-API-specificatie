@@ -62,7 +62,7 @@ plugins:
 
 remote_theme: VNG-Realisatie/jekyll-theme-vng-realisatie
 
-github: VNG-Realisatie/Voertuigen-API-specificatie
+github: VNG-Realisatie/Voertuigen-API-specificatie-tryout
 
 theme: jekyll-theme-time-machine
 
